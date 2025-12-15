@@ -14,5 +14,8 @@ return [
         'users.edit',
         'users.update',
         'users.destroy',
+        'profile.edit',
+        'profile.update',
+        'password.update',
     ],
 ];
