@@ -37,7 +37,7 @@ test('index shows users list to authorized users', function (): void {
     $response->assertStatus(200)
         ->assertInertia(
             fn ($page) => $page
-                ->component('users/index')
+                ->component('users/Index')
                 ->has('users')
         );
 
@@ -58,7 +58,7 @@ test('create shows form to authorized users', function (): void {
     $response->assertStatus(200)
         ->assertInertia(
             fn ($page) => $page
-                ->component('users/create')
+                ->component('users/Create')
                 ->has('roles')
         );
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\UserRestoreController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function (): void {
     Route::resource('users', UserController::class);

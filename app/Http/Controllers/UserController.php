@@ -33,7 +33,7 @@ class UserController extends Controller {
             search: $search
         );
 
-        return Inertia::render('users/index', [
+        return Inertia::render('users/Index', [
             'users' => $users,
             'filters' => [
                 'search' => $search,
@@ -47,7 +47,7 @@ class UserController extends Controller {
     public function create(): Response {
         $this->authorize('create', User::class);
 
-        return Inertia::render('users/create', [
+        return Inertia::render('users/Create', [
             'roles' => $this->userService->getRolesForForm(),
         ]);
     }
@@ -71,7 +71,7 @@ class UserController extends Controller {
     public function show(User $user): Response {
         $this->authorize('view', $user);
 
-        return Inertia::render('users/show', [
+        return Inertia::render('users/Show', [
             'user' => $user,
         ]);
     }
@@ -82,7 +82,7 @@ class UserController extends Controller {
     public function edit(User $user): Response {
         $this->authorize('update', $user);
 
-        return Inertia::render('users/edit', [
+        return Inertia::render('users/Edit', [
             'user' => $user,
             'roles' => $this->userService->getRolesForForm(),
         ]);

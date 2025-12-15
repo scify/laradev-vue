@@ -10,8 +10,8 @@ beforeEach(function (): void {
     $this->seed(RolesAndPermissionsSeeder::class);
 });
 
-test('guests are redirected to the login page', function (): void {
-    $this->get('/dashboard')->assertRedirect('/login');
+test('guests can see the dashboard page', function (): void {
+    $this->get('/dashboard')->assertOk();
 });
 
 test('admin users can visit the dashboard', function (): void {

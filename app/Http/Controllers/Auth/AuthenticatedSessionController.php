@@ -23,7 +23,7 @@ class AuthenticatedSessionController extends Controller {
             return redirect()->route(route: 'home');
         }
 
-        return Inertia::render('auth/login', [
+        return Inertia::render('auth/Login', [
             'canResetPassword' => true,
             'status' => $request->session()->get('status'),
         ]);
